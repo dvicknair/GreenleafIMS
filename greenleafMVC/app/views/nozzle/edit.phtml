@@ -1,0 +1,134 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<?php if ($this->session->has('auth')) { ?>
+
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <nav>
+            <ul class="pager">
+                <li class="previous"><?php echo $this->tag->linkTo(["nozzle", "Back"]) ?></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+<div class="page-header" align="center">
+    <h1>
+        Edit nozzle
+    </h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<?php
+    echo $this->tag->form(
+        [
+            "nozzle/save",
+            "autocomplete" => "off",
+            "class" => "form-horizontal"
+        ]
+    );
+?>
+
+<div class="form-group">
+    <label for="fieldPartnumber" class="col-sm-5 control-label">Part Number</label>
+    <div class="col-sm-2">
+        <?php echo $this->tag->textField(["partnumber", "size" => 30, "class" => "form-control", "id" => "fieldPartnumber"]) ?>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+<div class="form-group">
+    <label for="fieldDescription" class="col-sm-5 control-label">Description</label>
+    <div class="col-sm-4">
+        <?php echo $this->tag->textField(["description", "size" => 30, "class" => "form-control", "id" => "fieldDescription"]) ?>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+<div class="form-group">
+    <label for="fieldOnhand" class="col-sm-5 control-label">On Hand</label>
+    <div class="col-sm-1">
+        <?php echo $this->tag->textField(["onhand", "type" => "number", "class" => "form-control", "id" => "fieldOnhand"]) ?>
+    </div>
+    <div class="col-sm-6"></div>
+</div>
+
+<div class="form-group">
+    <label for="fieldMin" class="col-sm-5 control-label">Min</label>
+    <div class="col-sm-1">
+        <?php echo $this->tag->textField(["min", "type" => "number", "class" => "form-control", "id" => "fieldMin"]) ?>
+    </div>
+    <div class="col-sm-6"></div>
+</div>
+
+<div class="form-group">
+    <label for="fieldMax" class="col-sm-5 control-label">Max</label>
+    <div class="col-sm-1">
+        <?php echo $this->tag->textField(["max", "type" => "number", "class" => "form-control", "id" => "fieldMax"]) ?>
+    </div>
+    <div class="col-sm-6"></div>
+</div>
+
+<div class="form-group">
+    <label for="fieldP1" class="col-sm-5 control-label">P1</label>
+    <div class="col-sm-2">
+        <?php echo $this->tag->textField(["p1", "size" => 30, "class" => "form-control", "id" => "fieldP1"]) ?>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+<div class="form-group">
+    <label for="fieldP2" class="col-sm-5 control-label">P2</label>
+    <div class="col-sm-2">
+        <?php echo $this->tag->textField(["p2", "size" => 30, "class" => "form-control", "id" => "fieldP2"]) ?>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+<div class="form-group">
+    <label for="fieldP3" class="col-sm-5 control-label">P3</label>
+    <div class="col-sm-2">
+        <?php echo $this->tag->textField(["p3", "size" => 30, "class" => "form-control", "id" => "fieldP3"]) ?>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+<div class="form-group">
+    <label for="fieldP4" class="col-sm-5 control-label">P4</label>
+    <div class="col-sm-2">
+        <?php echo $this->tag->textField(["p4", "size" => 30, "class" => "form-control", "id" => "fieldP4"]) ?>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+<div class="form-group">
+    <label for="fieldP5" class="col-sm-5 control-label">P5</label>
+    <div class="col-sm-2">
+        <?php echo $this->tag->textField(["p5", "size" => 30, "class" => "form-control", "id" => "fieldP5"]) ?>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+
+
+<?php echo $this->tag->hiddenField("id") ?>
+
+<div class="form-group">
+    <div class="col-sm-offset-5 col-sm-7">
+        <?php echo $this->tag->submitButton(["Save", "class" => "btn btn-default"]) ?>
+    </div>
+</div>
+
+<?php echo $this->tag->endForm(); ?>
+
+<?php } else { ?>
+
+    You must log back in to continue...
+
+<?php } ?>

@@ -1,0 +1,28 @@
+<div class="page-header">
+    <h1>Sublet Orders</h1>
+</div>
+
+<?php if ($this->session->has('auth')) { ?>
+
+<table>
+    <tr>
+        <td>
+            <h4>Open Sublet Orders</h4>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            No Open Sublet Orders...
+        </td>
+    </tr>
+</table>
+
+<?php } else { ?>
+
+    <li>
+
+        You must log back in to continue...
+
+    </li>
+
+<?php } ?>

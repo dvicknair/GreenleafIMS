@@ -1,0 +1,20 @@
+<div class="page-header" align="center">
+    <h1>Reports</h1>
+</div>
+
+<?php if ($this->session->has('auth')) { ?>
+
+<div align="center">
+    <a href="/greenleafMVC/pdf/parts" target="_blank">Parts Inventory</a><br>
+    <a href="/greenleafMVC/pdf/nozzle" target="_blank">Nozzle Inventory</a>
+</div>
+
+      <?php } else { ?>
+
+            <li>
+
+                You must log back in to continue...
+
+            </li>
+
+        <?php } ?>

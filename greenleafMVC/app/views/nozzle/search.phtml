@@ -1,0 +1,89 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<?php use Phalcon\Tag; ?>
+
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <nav>
+            <ul class="pager">
+                <li class="previous"><?php echo $this->tag->linkTo(["nozzle/index", "Go Back"]); ?></li>
+                <li class="next"><?php echo $this->tag->linkTo(["nozzle/new", "Create "]); ?></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+
+<div class="page-header" align="center">
+    <h1>Nozzle search results</h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+            <th>Partnumber</th>
+            <th>Description</th>
+            <th>Onhand</th>
+            <th>Min</th>
+            <th>Max</th>
+            <th>P1</th>
+            <th>P2</th>
+            <th>P3</th>
+            <th>P4</th>
+            <th>P5</th>
+
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($page->items as $nozzle): ?>
+            <tr>
+            <td><?php echo $nozzle->partnumber ?></td>
+            <td><?php echo $nozzle->description ?></td>
+            <td><?php echo $nozzle->onhand ?></td>
+            <td><?php echo $nozzle->min ?></td>
+            <td><?php echo $nozzle->max ?></td>
+            <td><?php echo $nozzle->p1 ?></td>
+            <td><?php echo $nozzle->p2 ?></td>
+            <td><?php echo $nozzle->p3 ?></td>
+            <td><?php echo $nozzle->p4 ?></td>
+            <td><?php echo $nozzle->p5 ?></td>
+
+                <td><?php echo $this->tag->linkTo(["nozzle/edit/" . $nozzle->id, "Edit"]); ?></td>
+                <td><?php echo $this->tag->linkTo(["nozzle/delete/" . $nozzle->id, "Delete"]); ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+    <div class="col-sm-1"></div>
+</div>
+
+<div class="row">
+    <div class="col-sm-1">
+        <p class="pagination" style="line-height: 1.42857;padding: 6px 12px;">
+            <?php echo $page->current, "/", $page->total_pages ?>
+        </p>
+    </div>
+    <div class="col-sm-11">
+        <nav>
+            <ul class="pagination">
+                <li><?php echo $this->tag->linkTo("nozzle/search", "First") ?></li>
+                <li><?php echo $this->tag->linkTo("nozzle/search?page=" . $page->before, "Previous") ?></li>
+                <li><?php echo $this->tag->linkTo("nozzle/search?page=" . $page->next, "Next") ?></li>
+                <li><?php echo $this->tag->linkTo("nozzle/search?page=" . $page->last, "Last") ?></li>
+            </ul>
+        </nav>
+    </div>
+</div>

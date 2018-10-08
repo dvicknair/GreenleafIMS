@@ -1,0 +1,37 @@
+<div class="page-header">
+    <h1>Reports</h1>
+</div>
+
+<?php if ($this->session->has('auth')) { ?>
+
+    <table>
+        <tr>
+            <td>
+                <h5>Current Parts Inventory</h5>
+            </td>
+        </tr>
+        <tr>
+             <td>
+                <h5>Current Nozzle Inventory</h5>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h5>Sales By Customer</h5>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h5>Sales By Nozzle</h5>
+            </td>
+        </tr>
+    </table>
+      <?php } else { ?>
+
+            <li>
+
+                You must log back in to continue...
+
+            </li>
+
+        <?php } ?>

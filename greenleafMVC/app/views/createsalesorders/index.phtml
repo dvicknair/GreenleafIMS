@@ -1,0 +1,85 @@
+<?php use Phalcon\Tag as Tag ?>
+
+<div class="page-header" align="center">
+    <h1>Create Sales Order</h1>
+</div>
+
+<?php if ($this->session->has('auth')) { ?>
+
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2" style="background-color:white;"></div>
+            <div class="col-sm-8" style="background-color:white;">
+                <label class="control-label" for="login">Customer</label>
+                <?php echo Tag::textField(array('login', 'size' => "30")) ?>
+                <?php echo Tag::submitButton(array('New', 'class' => 'btn btn-primary btn-large')) ?>
+                <label class="control-label" for="login">Order#</label>
+                <?php echo Tag::textField(array('Job#', 'size' => "5")) ?>
+                <label class="control-label" for="login">Due Date</label>
+                <?php echo Tag::textField(array('Job#', 'size' => "8")) ?>
+            </div>
+            <div class="col-sm-2" style="background-color:white;"></div>
+        </div>
+        <br>
+
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2" style="background-color:white;"></div>
+            <div class="col-sm-2" style="background-color:white;">
+                <label class="control-label" for="login">Nozzle Number</label>
+            </div>
+            <div class="col-sm-1" style="background-color:white;">
+                <label class="control-label" for="login">Qty</label>
+            </div>
+            <div class="col-sm-7" style="background-color:white;"></div>
+        </div>
+
+
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2" style="background-color:white;"></div>
+            <div class="col-sm-2" style="background-color:white;">
+                <?php echo Tag::textField(array('login', 'size' => "10")) ?>
+            </div>
+            <div class="col-sm-1" style="background-color:white;">
+                <?php echo Tag::textField(array('login', 'size' => "4")) ?>
+            </div>
+            <div class="col-sm-7" style="background-color:white;"></div>
+        </div> <br>
+        <div class="row">
+            <div class="col-sm-2" style="background-color:white;"></div>
+            <div class="col-sm-2" style="background-color:white;">
+                <?php echo Tag::textField(array('login', 'size' => "10")) ?>
+            </div>
+            <div class="col-sm-1" style="background-color:white;">
+                <?php echo Tag::textField(array('login', 'size' => "4")) ?>
+            </div>
+            <div class="col-sm-7" style="background-color:white;"></div>
+        </div> <br>
+        <div class="row">
+            <div class="col-sm-2" style="background-color:white;"></div>
+            <div class="col-sm-2" style="background-color:white;">
+                <?php echo Tag::textField(array('login', 'size' => "10")) ?>
+            </div>
+            <div class="col-sm-1" style="background-color:white;">
+                <?php echo Tag::textField(array('login', 'size' => "4")) ?>
+            </div>
+            <div class="col-sm-7" style="background-color:white;"></div>
+        </div> <br>
+        <div class="row">
+            <div class="col-sm-4" style="background-color:white;"></div>
+            <div class="col-sm-2" style="background-color:white;">
+                <?php echo Tag::submitButton(array('Submit Order', 'class' => 'btn btn-primary btn-large')) ?>
+            </div>
+            <div class="col-sm-6" style="background-color:white;"></div>
+        </div> <br>
+
+<?php } else { ?>
+
+    <li>
+
+        You must log back in to continue...
+
+    </li>
+
+<?php } ?>

@@ -1,0 +1,52 @@
+<?php use Phalcon\Tag as Tag ?>
+
+<?php echo $this->getContent() ?>
+
+<html>
+<head>
+    <title>Greenleaf IMS</title>
+</head>
+
+<style type="text/css">
+    body{
+        background-image:url(../img/background.jpg);
+        background-size:100% 100%;
+    }
+
+    div.login{
+        background-color:white;
+        border-width:1px;
+        border-color:black;
+        border-style:solid;
+        margin:auto;
+        margin-top:100px;
+        width:330px;
+    }
+</style>
+
+<body>
+
+</body>
+<div align="center" class="login">
+
+    <img src="../img/greenleaflogo.png">
+
+
+
+    <?php echo Tag::form(array('users/login', 'class' => 'form-inline', 'autocomplete' => 'off')) ?>
+
+    <p>
+        <?php echo Tag::textField(array('login', 'size' => "20", 'placeholder' => 'Username')) ?>
+    </p>
+
+    <p>
+        <?php echo Tag::passwordField(array('password', 'size' => "20", 'placeholder' => 'Password')) ?>
+    </p>
+
+    <p>
+        <?php echo Tag::submitButton(array('Sign In', 'class' => 'btn btn-primary btn-large')) ?>
+    </p>
+
+    </form>
+</div>
+</html>

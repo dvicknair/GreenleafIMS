@@ -1,0 +1,29 @@
+<?php use Phalcon\Tag as Tag ?>
+
+<div class="page-header" align="center">
+    <h1>Inventory Adjustment</h1>
+</div>
+
+<?php if ($this->session->has('auth')) { ?>
+
+<?php echo Tag::form(array('users/login', 'class' => 'form-inline', 'autocomplete' => 'off')) ?>
+
+		<p>
+			<label class="control-label" for="login">Username</label> <label class="control-label" for="password">Part Number</label><br/>
+			<?php echo Tag::textField(array('login', 'size' => "10")) ?> <?php echo Tag::passwordField(array('password', 'size' => "15")) ?>
+		</p>
+
+
+		<p>
+			<?php echo Tag::submitButton(array('Submit', 'class' => 'btn btn-primary btn-large')) ?>
+		</p>
+
+<?php } else { ?>
+
+    <li>
+
+        You must log back in to continue...
+
+    </li>
+
+<?php } ?>
